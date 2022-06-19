@@ -1,0 +1,42 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.0'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	maven{
+		url 'http://maven.aliyun.com/nexus/content/groups/public'
+		allowInsecureProtocol = true
+	}
+	mavenCentral()
+}
+
+//springVersion =
+dependencies {
+	// https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+	compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+
+	implementation 'org.springframework:spring-beans:5.0.11.RELEASE'
+	implementation 'org.springframework:spring-core:5.0.11.RELEASE'
+	implementation 'org.springframework:spring-context:5.0.11.RELEASE'
+	implementation 'org.springframework:spring-context-support:5.0.11.RELEASE'
+
+	implementation 'org.springframework.boot:spring-boot:2.0.7.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-autoconfigure:2.0.7.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter:2.0.7.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter:2.0.7.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.0.7.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter-jetty:2.0.7.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.0.7.RELEASE'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test：2.0.7.RELEASE'
+	implementation 'org.projectlombok:lombok'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
